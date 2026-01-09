@@ -2,48 +2,87 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Sravanth Kumar</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sravanth Kumar — Frontend Engineer</title>
+
+  <meta name="description" content="Sravanth Kumar, Frontend Engineer. React, TypeScript. Enterprise UI work for NetApp. Portfolio and projects." />
 
   <style>
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 680px;
+      max-width: 760px;
       margin: 80px auto;
       padding: 0 20px;
-      line-height: 1.6;
+      line-height: 1.65;
       color: #111;
       background: #fff;
     }
 
     h1 {
-      font-size: 2.2rem;
-      margin-bottom: 0.3rem;
+      font-size: 2.4rem;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-top: 64px;
+      margin-bottom: 16px;
+    }
+
+    h3 {
+      font-size: 1.1rem;
+      margin-bottom: 6px;
     }
 
     p {
       font-size: 1rem;
       color: #333;
+      margin: 0.5rem 0;
     }
 
-    .links {
+    .hero p {
+      font-size: 1.05rem;
+      max-width: 620px;
+    }
+
+    .cta {
       margin-top: 24px;
     }
 
-    .links a {
+    .cta a {
       display: inline-block;
-      margin-right: 16px;
+      margin-right: 18px;
       text-decoration: none;
       color: #0066cc;
       font-weight: 500;
     }
 
-    .links a:hover {
+    .cta a:hover {
       text-decoration: underline;
     }
 
+    ul {
+      margin: 12px 0 0 18px;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .project {
+      margin-top: 24px;
+      padding-left: 14px;
+      border-left: 2px solid #eee;
+    }
+
+    .meta {
+      font-size: 0.9rem;
+      color: #555;
+    }
+
     footer {
-      margin-top: 60px;
+      margin-top: 80px;
       font-size: 0.85rem;
       color: #777;
     }
@@ -51,30 +90,107 @@
 </head>
 
 <body>
-  <h1>Sravanth Kumar</h1>
-  <p>
-    Software engineer. Interested in building useful things, documenting
-    what I learn, and thinking clearly about systems.
-  </p>
-  <P>
-    Currently building 'Career Building Engine'
-    <p>1. v0 (version 0 is finished) - fill all your details once and every time you are filling a job application, you can fill matching fields in a single click, from the saved data</p> 
-    <p>tweak: users can add their own custom fields and responses to fill forms </p>
-  </P>
 
-  <div class="links">
-    <a href="https://github.com/sravanthkumar" target="_blank">GitHub</a>
-    <a href="#" target="_blank">GitBook</a>
-    <a href="#" target="_blank">LinkedIn</a>
-  </div>
+  <!-- HERO / FIRST IMPRESSION -->
+  <section class="hero">
+    <h1>Sravanth Kumar</h1>
+    <p>
+      Frontend Engineer working with <strong>React and TypeScript</strong>.
+      Built and modernized production UI systems for <strong>NetApp</strong>,
+      with experience in legacy migration, shared state management,
+      and data-heavy interfaces.
+    </p>
+
+    <div class="cta">
+      <a href="/Sravanth_Kumar_Resume_v3_Final_MetadataFixed.pdf" target="_blank">Resume (PDF)</a>
+      <a href="https://github.com/sravanthkumarch" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/your-link-here" target="_blank">LinkedIn</a>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <h2>Skills</h2>
+    <p>
+      React, TypeScript, JavaScript (ES6+), HTML, CSS, Redux, Context API,
+      REST APIs, Material UI, Ag-Grid, Git, Jest, React Testing Library
+    </p>
+  </section>
+
+  <!-- EXPERIENCE SNAPSHOT -->
+  <section>
+    <h2>Experience</h2>
+    <p>
+      Frontend Engineer at <strong>Onstak Technologies Pvt. Ltd.</strong>
+      (client: NetApp) — Sep 2024 to Oct 2025.
+      Worked on enterprise web applications used by internal and external
+      NetApp customers.
+    </p>
+  </section>
+
+  <!-- PROJECTS -->
+  <section>
+    <h2>Projects</h2>
+
+    <div class="project">
+      <h3>Career Building Engine — Chrome Extension</h3>
+      <p class="meta">
+        React · Chrome Extension (Manifest V3) · DOM Manipulation
+      </p>
+      <p>
+        A productivity-focused Chrome extension that auto-fills job application
+        forms using user-stored profile data, reducing repetitive manual entry.
+      </p>
+      <ul>
+        <li>
+          Users enter their information once and selectively auto-populate
+          matching form fields on job application pages.
+        </li>
+        <li>
+          Supports custom user-defined fields and responses for non-standard
+          application forms.
+        </li>
+        <li>
+          Uses DOM inspection and user-triggered injection to safely fill
+          detected input fields across multiple sites.
+        </li>
+      </ul>
+      <p class="meta">
+        Version 0 completed · Actively iterating
+      </p>
+    </div>
+  </section>
+
+  <!-- ABOUT / CONTEXT -->
+  <section>
+    <h2>About</h2>
+    <p>
+      I’m an early-career frontend engineer with real production experience
+      in enterprise environments. I care about clarity, maintainability,
+      and understanding systems beyond just making things “work”.
+    </p>
+    <p>
+      Outside assigned work, I like building small tools that remove friction,
+      documenting what I learn, and improving how I think about engineering
+      problems.
+    </p>
+  </section>
+
+  <!-- CONTACT -->
+  <section>
+    <h2>Contact</h2>
+    <p>
+      Email: <a href="mailto:sravanthkumarch99@gmail.com">sravanthkumarch99@gmail.com</a>
+    </p>
+  </section>
 
   <footer>
-    © <span id="year"></span>
+    © <span id="year"></span> Sravanth Kumar
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+
 </body>
 </html>
-
