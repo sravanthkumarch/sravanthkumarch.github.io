@@ -3,190 +3,332 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sravanth Kumar — Frontend Engineer</title>
 
-  <meta name="description" content="Sravanth Kumar, Frontend Engineer. React, TypeScript. Enterprise UI work for NetApp. Portfolio and projects." />
+  <title>Sravanth Kumar — Frontend Engineer</title>
+  <meta name="description" content="Sravanth Kumar, Frontend Engineer specializing in React and TypeScript. Enterprise UI experience with NetApp. Portfolio and projects." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Sravanth Kumar — Frontend Engineer" />
+  <meta property="og:description" content="Frontend Engineer | React & TypeScript | Enterprise UI experience" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://sravanthkumar.tech" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #11162a;
+      --text: #e6e8ef;
+      --muted: #a0a3b1;
+      --accent: #6cf2c2;
+      --accent-2: #7aa2ff;
+      --border: #1f2545;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 760px;
-      margin: 80px auto;
-      padding: 0 20px;
+      margin: 0;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: linear-gradient(180deg, #0b0f19 0%, #0e1325 100%);
+      color: var(--text);
       line-height: 1.65;
-      color: #111;
-      background: #fff;
     }
 
-    h1 {
-      font-size: 2.4rem;
-      margin-bottom: 0.4rem;
-      letter-spacing: -0.02em;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 64px;
-      margin-bottom: 16px;
-    }
-
-    h3 {
-      font-size: 1.1rem;
-      margin-bottom: 6px;
-    }
-
-    p {
-      font-size: 1rem;
-      color: #333;
-      margin: 0.5rem 0;
-    }
-
-    .hero p {
-      font-size: 1.05rem;
-      max-width: 620px;
-    }
-
-    .cta {
-      margin-top: 24px;
-    }
-
-    .cta a {
-      display: inline-block;
-      margin-right: 18px;
+    a {
+      color: var(--accent);
       text-decoration: none;
-      color: #0066cc;
-      font-weight: 500;
     }
 
-    .cta a:hover {
+    a:hover {
       text-decoration: underline;
     }
 
-    ul {
-      margin: 12px 0 0 18px;
+    .container {
+      max-width: 1100px;
+      padding: 80px 24px;
+      margin: auto;
     }
 
-    li {
-      margin-bottom: 6px;
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 48px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      line-height: 1.1;
+      margin-bottom: 16px;
+      letter-spacing: -0.03em;
+    }
+
+    .hero p {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 560px;
+    }
+
+    .cta {
+      margin-top: 32px;
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-weight: 600;
+      border: 1px solid var(--border);
+      background: var(--card);
+      color: var(--text);
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b0f19;
+      border: none;
+    }
+
+    /* SKILLS */
+    .section {
+      margin-top: 100px;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 20px;
+    }
+
+    .skill-card h3 {
+      margin-bottom: 10px;
+      font-size: 1.05rem;
+    }
+
+    .skill-card p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* PROJECTS */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
     }
 
     .project {
-      margin-top: 24px;
-      padding-left: 14px;
-      border-left: 2px solid #eee;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: transform 0.2s ease;
     }
 
-    .meta {
-      font-size: 0.9rem;
-      color: #555;
+    .project:hover {
+      transform: translateY(-4px);
+    }
+
+    .project img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      background: #000;
+    }
+
+    .project-content {
+      padding: 20px;
+    }
+
+    .project-content h3 {
+      margin-bottom: 8px;
+    }
+
+    .project-content p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .tags {
+      margin-top: 12px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .tag {
+      background: #1a2040;
+      color: var(--accent-2);
+      padding: 4px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+    }
+
+    /* ABOUT */
+    .about {
+      max-width: 700px;
+      color: var(--muted);
     }
 
     footer {
-      margin-top: 80px;
+      margin-top: 120px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      text-align: center;
       font-size: 0.85rem;
-      color: #777;
+      color: var(--muted);
+    }
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2.4rem;
+      }
     }
   </style>
 </head>
 
 <body>
 
-  <!-- HERO / FIRST IMPRESSION -->
-  <section class="hero">
-    <h1>Sravanth Kumar</h1>
-    <p>
-      Frontend Engineer working with <strong>React and TypeScript</strong>.
-      Built and modernized production UI systems for <strong>NetApp</strong>,
-      with experience in legacy migration, shared state management,
-      and data-heavy interfaces.
-    </p>
+  <div class="container">
 
-    <div class="cta">
-      <a href="/Sravanth_Kumar_Resume_v3_Final_MetadataFixed.pdf" target="_blank">Resume (PDF)</a>
-      <a href="https://github.com/sravanthkumarch" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/your-link-here" target="_blank">LinkedIn</a>
-    </div>
-  </section>
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1>Sravanth Kumar</h1>
+        <p>
+          Frontend Engineer specializing in <strong>React and TypeScript</strong>.
+          Worked on enterprise UI systems for <strong>NetApp</strong>,
+          including legacy migration, shared state management,
+          and data-heavy interfaces.
+        </p>
 
-  <!-- SKILLS -->
-  <section>
-    <h2>Skills</h2>
-    <p>
-      React, TypeScript, JavaScript (ES6+), HTML, CSS, Redux, Context API,
-      REST APIs, Material UI, Ag-Grid, Git, Jest, React Testing Library
-    </p>
-  </section>
+        <div class="cta">
+          <a class="btn primary" href="/Sravanth_Kumar_Resume_v3_Final_MetadataFixed.pdf" target="_blank">Download Resume</a>
+          <a class="btn" href="https://www.linkedin.com/in/sravanth-kumar15/" target="_blank">LinkedIn</a>
+          <a class="btn" href="#" target="_blank">GitHub</a>
+        </div>
+      </div>
 
-  <!-- EXPERIENCE SNAPSHOT -->
-  <section>
-    <h2>Experience</h2>
-    <p>
-      Frontend Engineer at <strong>Onstak Technologies Pvt. Ltd.</strong>
-      (client: NetApp) — Sep 2024 to Oct 2025.
-      Worked on enterprise web applications used by internal and external
-      NetApp customers.
-    </p>
-  </section>
+      <!-- Optional avatar / illustration later -->
+      <div></div>
+    </section>
 
-  <!-- PROJECTS -->
-  <section>
-    <h2>Projects</h2>
+    <!-- SKILLS -->
+    <section class="section">
+      <h2>Skills</h2>
+      <div class="skills">
+        <div class="skill-card">
+          <h3>Frontend</h3>
+          <p>React, TypeScript, JavaScript (ES6+), HTML, CSS</p>
+        </div>
+        <div class="skill-card">
+          <h3>State & Data</h3>
+          <p>Redux, Context API, REST APIs, Axios</p>
+        </div>
+        <div class="skill-card">
+          <h3>UI</h3>
+          <p>Material UI, Ag-Grid, Responsive Design</p>
+        </div>
+        <div class="skill-card">
+          <h3>Tooling</h3>
+          <p>Git, GitHub, Jest, React Testing Library</p>
+        </div>
+      </div>
+    </section>
 
-    <div class="project">
-      <h3>Career Building Engine — Chrome Extension</h3>
-      <p class="meta">
-        React · Chrome Extension (Manifest V3) · DOM Manipulation
-      </p>
-      <p>
-        A productivity-focused Chrome extension that auto-fills job application
-        forms using user-stored profile data, reducing repetitive manual entry.
-      </p>
-      <ul>
-        <li>
-          Users enter their information once and selectively auto-populate
-          matching form fields on job application pages.
-        </li>
-        <li>
-          Supports custom user-defined fields and responses for non-standard
-          application forms.
-        </li>
-        <li>
-          Uses DOM inspection and user-triggered injection to safely fill
-          detected input fields across multiple sites.
-        </li>
-      </ul>
-      <p class="meta">
-        Version 0 completed · Actively iterating
-      </p>
-    </div>
-  </section>
+    <!-- PROJECTS -->
+    <section class="section">
+      <h2>Projects</h2>
 
-  <!-- ABOUT / CONTEXT -->
-  <section>
-    <h2>About</h2>
-    <p>
-      I’m an early-career frontend engineer with real production experience
-      in enterprise environments. I care about clarity, maintainability,
-      and understanding systems beyond just making things “work”.
-    </p>
-    <p>
-      Outside assigned work, I like building small tools that remove friction,
-      documenting what I learn, and improving how I think about engineering
-      problems.
-    </p>
-  </section>
+      <div class="projects">
 
-  <!-- CONTACT -->
-  <section>
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:sravanthkumarch99@gmail.com">sravanthkumarch99@gmail.com</a>
-    </p>
-  </section>
+        <div class="project">
+          <!-- Replace src with real screenshot -->
+          <img src="https://via.placeholder.com/800x400?text=Career+Building+Engine" alt="Career Building Engine" />
+          <div class="project-content">
+            <h3>Career Building Engine</h3>
+            <p>
+              A Chrome extension that auto-fills job application forms using
+              user-stored profile data, reducing repetitive manual entry.
+            </p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Chrome Extension</span>
+              <span class="tag">Manifest V3</span>
+              <span class="tag">DOM APIs</span>
+            </div>
+          </div>
+        </div>
 
-  <footer>
-    © <span id="year"></span> Sravanth Kumar
-  </footer>
+        <!-- Future project slot -->
+        <div class="project">
+          <img src="https://via.placeholder.com/800x400?text=Next+Project" alt="Future Project" />
+          <div class="project-content">
+            <h3>Upcoming Project</h3>
+            <p>
+              Data-heavy dashboard exploring performance, visualization,
+              and scalable frontend patterns.
+            </p>
+            <div class="tags">
+              <span class="tag">React</span>
+              <span class="tag">Ag-Grid</span>
+              <span class="tag">Charts</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section">
+      <h2>About</h2>
+      <div class="about">
+        <p>
+          I’m an early-career frontend engineer with real production experience
+          in enterprise environments. I enjoy working on systems that need to be
+          both usable and maintainable over time.
+        </p>
+        <p>
+          Outside of work, I build small tools that remove friction I’ve
+          personally experienced, and I’m continuously improving how I think
+          about frontend architecture and performance.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Sravanth Kumar
+    </footer>
+
+  </div>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
