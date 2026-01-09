@@ -3,373 +3,241 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sravanth Kumar</title>
 
-  <title>Sravanth Kumar — Frontend Engineer</title>
-  <meta name="description" content="Frontend Engineer building clear, maintainable UI systems with React and TypeScript." />
-
-  <!-- Fonts -->
+  <!-- Font close to Bluren -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0b0d12;
-      --surface: #121620;
-      --border: #1f2433;
-      --text: #f4f6fb;
-      --muted: #a1a8bd;
-      --accent: #7c9cff;
-      --accent-soft: #5cf2c2;
+      --bg: #0a0a0a;
+      --card: #121212;
+      --border: rgba(255,255,255,0.08);
+      --text: #f5f5f5;
+      --muted: #9a9a9a;
+      --accent: #ffffff;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: 'Inter', system-ui, sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    a { color: inherit; text-decoration: none; }
-
-    /* NAV */
-    nav {
-      position: sticky;
-      top: 0;
+    /* ===== FLOATING CENTER NAV (BLUREN STYLE) ===== */
+    .nav-wrapper {
+      position: fixed;
+      top: 24px;
+      left: 50%;
+      transform: translateX(-50%);
       z-index: 100;
-      background: rgba(11,13,18,0.85);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--border);
     }
 
-    .nav-inner {
-      max-width: 1200px;
-      margin: auto;
-      padding: 16px 24px;
+    nav {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      gap: 20px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      background: rgba(18,18,18,0.75);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border);
     }
 
-    .nav-links a {
-      margin-left: 20px;
+    nav a {
+      font-size: 0.85rem;
       color: var(--muted);
+      text-decoration: none;
       font-weight: 500;
     }
 
-    .nav-links a:hover { color: var(--text); }
-
-    /* LAYOUT */
-    .container {
-      max-width: 1200px;
-      margin: auto;
-      padding: 100px 24px;
+    nav a:hover {
+      color: var(--text);
     }
 
-    section { margin-bottom: 120px; }
+    /* ===== LAYOUT ===== */
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 160px 24px 120px;
+    }
 
-    /* HERO */
+    section {
+      margin-bottom: 160px;
+    }
+
+    /* ===== HERO ===== */
     .hero h1 {
-      font-size: clamp(3rem, 6vw, 5rem);
+      font-size: clamp(3.5rem, 7vw, 6rem);
       font-weight: 800;
       letter-spacing: -0.04em;
       margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 1.1rem;
-      max-width: 720px;
+      max-width: 620px;
+      font-size: 1.05rem;
       color: var(--muted);
     }
 
-    .cta {
-      margin-top: 40px;
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      padding: 14px 22px;
-      border-radius: 14px;
-      font-weight: 600;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      transition: transform 0.15s ease;
-    }
-
-    .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
-      color: #0b0d12;
-      border: none;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    /* STATS */
+    /* ===== STATS ===== */
     .stats {
+      margin-top: 80px;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 32px;
-      margin-top: 80px;
     }
 
     .stat {
-      background: var(--surface);
+      padding: 32px;
+      border-radius: 20px;
+      background: var(--card);
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 28px;
     }
 
     .stat h3 {
-      font-size: 2.2rem;
-      margin-bottom: 6px;
-      color: var(--accent);
+      font-size: 2.4rem;
+      margin: 0 0 6px;
     }
 
-    .stat p { color: var(--muted); }
+    .stat span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
 
-    /* SECTION HEADERS */
+    /* ===== SECTION HEADERS ===== */
     h2 {
-      font-size: 2.6rem;
-      margin-bottom: 40px;
+      font-size: 3rem;
+      font-weight: 700;
       letter-spacing: -0.03em;
+      margin-bottom: 60px;
     }
 
-    /* PROJECTS */
-    .projects {
+    /* ===== PROJECT GRID ===== */
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
       gap: 36px;
     }
 
-    .project {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 22px;
+    .card {
+      border-radius: 24px;
       overflow: hidden;
-      transition: transform 0.2s ease;
+      background: var(--card);
+      border: 1px solid var(--border);
+      transition: transform .25s ease;
     }
 
-    .project:hover { transform: translateY(-6px); }
+    .card:hover {
+      transform: translateY(-6px);
+    }
 
-    .project img {
+    .card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
       background: #000;
     }
 
-    .project-content {
+    .card-content {
       padding: 24px;
     }
 
-    .project-content h3 { margin-bottom: 10px; }
+    .card-content h3 {
+      margin: 0 0 10px;
+    }
 
-    .project-content p {
+    .card-content p {
       color: var(--muted);
       font-size: 0.95rem;
     }
 
-    .tags {
-      margin-top: 14px;
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .tag {
-      background: #1c2235;
-      padding: 6px 12px;
-      border-radius: 999px;
-      font-size: 0.75rem;
-      color: var(--accent);
-    }
-
-    /* EXPERIENCE */
-    .experience {
-      max-width: 800px;
-    }
-
-    .experience h3 { margin-bottom: 8px; }
-
-    .experience ul {
-      margin-top: 12px;
-      padding-left: 20px;
-      color: var(--muted);
-    }
-
-    .experience li { margin-bottom: 8px; }
-
-    /* SKILLS */
-    .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 28px;
-    }
-
-    .skill {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 24px;
-    }
-
-    .skill h3 { margin-bottom: 10px; }
-
-    .skill p { color: var(--muted); }
-
-    /* TESTIMONIALS */
-    .testimonials {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 32px;
-    }
-
+    /* ===== TESTIMONIAL ===== */
     .testimonial {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 28px;
+      max-width: 700px;
+      font-size: 1.2rem;
+      line-height: 1.7;
       color: var(--muted);
     }
 
-    .testimonial strong { color: var(--text); }
-
-    /* FOOTER */
-    footer {
+    /* ===== FOOTER CTA ===== */
+    .cta {
       text-align: center;
-      padding-top: 40px;
-      border-top: 1px solid var(--border);
-      color: var(--muted);
-      font-size: 0.85rem;
+    }
+
+    .cta a {
+      display: inline-block;
+      padding: 16px 28px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .cta a:hover {
+      background: var(--card);
     }
   </style>
 </head>
 
 <body>
 
-  <nav>
-    <div class="nav-inner">
-      <strong>Sravanth</strong>
-      <div class="nav-links">
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </div>
-    </div>
-  </nav>
+  <!-- CENTER FLOATING NAV -->
+  <div class="nav-wrapper">
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#skills">Skills</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 
   <main class="container">
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Building clear, scalable frontend systems.</h1>
+      <h1>Frontend Engineer<br/>building scalable UI.</h1>
       <p>
-        Frontend Engineer building React and TypeScript UI modules for
-        enterprise NetApp applications. Experienced with legacy UI migration,
-        shared state management, and data-heavy interfaces.
+        I build React and TypeScript interfaces for enterprise applications,
+        focusing on clarity, maintainability, and data-heavy workflows.
       </p>
 
-      <div class="cta">
-        <a class="btn primary" href="/sravanth-kumar-resume.pdf" target="_blank">Download Resume</a>
-        <a class="btn" href="https://www.linkedin.com/in/sravanth-kumar15/" target="_blank">LinkedIn</a>
-        <a class="btn" href="#">GitHub</a>
-      </div>
-
       <div class="stats">
-        <div class="stat"><h3>4</h3><p>Projects Built</p></div>
-        <div class="stat"><h3>8</h3><p>Modules Delivered</p></div>
-        <div class="stat"><h3>7</h3><p>Core Skills</p></div>
-        <div class="stat"><h3>1+</h3><p>Years Coding</p></div>
+        <div class="stat"><h3>4</h3><span>Projects</span></div>
+        <div class="stat"><h3>8</h3><span>Modules</span></div>
+        <div class="stat"><h3>7</h3><span>Core Skills</span></div>
+        <div class="stat"><h3>1+</h3><span>Years Coding</span></div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <h2>Selected Projects</h2>
-      <div class="projects">
-
-        <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Job+Application+Autofill+Extension" />
-          <div class="project-content">
-            <h3>Job Application Autofill Extension</h3>
-            <p>
-              Chrome extension that reduces repetitive data entry by mapping
-              stored user profiles to detected form fields across job application sites.
-            </p>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">Chrome Extension</span>
-              <span class="tag">Manifest V3</span>
-              <span class="tag">DOM APIs</span>
-            </div>
+    <!-- WORK -->
+    <section id="work">
+      <h2>Selected Work</h2>
+      <div class="grid">
+        <div class="card">
+          <img src="https://via.placeholder.com/800x400" />
+          <div class="card-content">
+            <h3>Job Application Autofill</h3>
+            <p>Chrome extension that reduces repetitive form entry.</p>
           </div>
         </div>
 
-        <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Enterprise+UI+Modules" />
-          <div class="project-content">
+        <div class="card">
+          <img src="https://via.placeholder.com/800x400" />
+          <div class="card-content">
             <h3>Enterprise UI Modules</h3>
-            <p>
-              React-based UI modules built for internal NetApp teams,
-              focusing on data-heavy workflows and maintainable state management.
-            </p>
-            <div class="tags">
-              <span class="tag">React</span>
-              <span class="tag">TypeScript</span>
-              <span class="tag">Redux</span>
-              <span class="tag">Ag-Grid</span>
-            </div>
+            <p>React modules built for NetApp internal systems.</p>
           </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience">
-      <h2>Experience</h2>
-      <div class="experience">
-        <h3>Frontend Engineer — Onstak Technologies (Client: NetApp)</h3>
-        <p class="muted">Sep 2024 – Oct 2025</p>
-        <ul>
-          <li>Built and maintained React + TypeScript UI modules used by internal NetApp teams.</li>
-          <li>Migrated legacy UI components to modern React patterns.</li>
-          <li>Implemented shared state and data-heavy tables in enterprise workflows.</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills">
-      <h2>Skills & Stack</h2>
-      <div class="skills">
-        <div class="skill"><h3>Core</h3><p>JavaScript, TypeScript, React</p></div>
-        <div class="skill"><h3>State</h3><p>Redux, Context API</p></div>
-        <div class="skill"><h3>UI</h3><p>Material UI, Responsive Design, Ag-Grid</p></div>
-        <div class="skill"><h3>Tooling</h3><p>Git, GitHub, Jest, React Testing Library</p></div>
-      </div>
-    </section>
-
-    <!-- TESTIMONIALS -->
-    <section>
-      <h2>Testimonials</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          “Sravanth ramped up quickly on a complex codebase and consistently delivered
-          clean, maintainable UI components.”
-          <br><br><strong>— Senior Engineer, NetApp</strong>
-        </div>
-        <div class="testimonial">
-          “Thoughtful frontend engineer with strong fundamentals and attention to detail.”
-          <br><br><strong>— Team Lead, Onstak Technologies</strong>
         </div>
       </div>
     </section>
@@ -377,29 +245,20 @@
     <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
-      <p style="max-width:800px;color:var(--muted)">
-        I build frontend systems that need to stay readable and maintainable as they grow.
-        In my recent work, that meant migrating legacy UI, managing shared state,
-        and working with large datasets in enterprise applications.
-        Outside of work, I build small tools to remove repetitive friction I’ve personally experienced.
+      <p class="testimonial">
+        I build frontend systems that stay readable as they scale. My recent work
+        involved migrating legacy UI, managing shared state, and working with
+        large datasets in enterprise environments.
       </p>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact">
+    <section id="contact" class="cta">
       <h2>Let’s work together</h2>
-      <a class="btn primary" href="mailto:sravanthkumarch99@gmail.com">Contact Me</a>
+      <a href="mailto:sravanthkumarch99@gmail.com">Get in touch</a>
     </section>
 
-    <footer>
-      © <span id="year"></span> Sravanth Kumar
-    </footer>
-
   </main>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
