@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Sravanth Kumar — Frontend Engineer</title>
-  <meta name="description" content="Frontend Engineer building scalable, modern UI systems with React and TypeScript." />
+  <meta name="description" content="Frontend Engineer building clear, maintainable UI systems with React and TypeScript." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -20,11 +20,10 @@
       --text: #f4f6fb;
       --muted: #a1a8bd;
       --accent: #7c9cff;
-      --accent-2: #5cf2c2;
+      --accent-soft: #5cf2c2;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
@@ -42,7 +41,7 @@
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(11,13,18,0.8);
+      background: rgba(11,13,18,0.85);
       backdrop-filter: blur(10px);
       border-bottom: 1px solid var(--border);
     }
@@ -83,7 +82,7 @@
 
     .hero p {
       font-size: 1.1rem;
-      max-width: 700px;
+      max-width: 720px;
       color: var(--muted);
     }
 
@@ -104,7 +103,7 @@
     }
 
     .btn.primary {
-      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      background: linear-gradient(135deg, var(--accent), var(--accent-soft));
       color: #0b0d12;
       border: none;
     }
@@ -191,6 +190,21 @@
       color: var(--accent);
     }
 
+    /* EXPERIENCE */
+    .experience {
+      max-width: 800px;
+    }
+
+    .experience h3 { margin-bottom: 8px; }
+
+    .experience ul {
+      margin-top: 12px;
+      padding-left: 20px;
+      color: var(--muted);
+    }
+
+    .experience li { margin-bottom: 8px; }
+
     /* SKILLS */
     .skills {
       display: grid;
@@ -243,7 +257,8 @@
     <div class="nav-inner">
       <strong>Sravanth</strong>
       <div class="nav-links">
-        <a href="#work">Work</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
         <a href="#about">About</a>
         <a href="#contact">Contact</a>
@@ -255,11 +270,11 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Building clean, scalable frontend systems.</h1>
+      <h1>Building clear, scalable frontend systems.</h1>
       <p>
-        I’m a Frontend Engineer with experience building and modernizing
-        enterprise UI systems for <strong>NetApp</strong>. I focus on clarity,
-        maintainability, and performance using React and TypeScript.
+        Frontend Engineer building React and TypeScript UI modules for
+        enterprise NetApp applications. Experienced with legacy UI migration,
+        shared state management, and data-heavy interfaces.
       </p>
 
       <div class="cta">
@@ -277,16 +292,21 @@
     </section>
 
     <!-- PROJECTS -->
-    <section id="work">
-      <h2>Selected Work</h2>
+    <section id="projects">
+      <h2>Selected Projects</h2>
       <div class="projects">
+
         <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Career+Building+Engine" />
+          <img src="https://via.placeholder.com/800x400?text=Job+Application+Autofill+Extension" />
           <div class="project-content">
-            <h3>Career Building Engine</h3>
-            <p>Chrome extension that reduces repetitive data entry by mapping stored profiles to job application forms.</p>
+            <h3>Job Application Autofill Extension</h3>
+            <p>
+              Chrome extension that reduces repetitive data entry by mapping
+              stored user profiles to detected form fields across job application sites.
+            </p>
             <div class="tags">
               <span class="tag">React</span>
+              <span class="tag">Chrome Extension</span>
               <span class="tag">Manifest V3</span>
               <span class="tag">DOM APIs</span>
             </div>
@@ -294,17 +314,36 @@
         </div>
 
         <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Enterprise+UI" />
+          <img src="https://via.placeholder.com/800x400?text=Enterprise+UI+Modules" />
           <div class="project-content">
-            <h3>Enterprise UI Modernization</h3>
-            <p>Migration of legacy EXTJS components to modern React architecture for enterprise workflows.</p>
+            <h3>Enterprise UI Modules</h3>
+            <p>
+              React-based UI modules built for internal NetApp teams,
+              focusing on data-heavy workflows and maintainable state management.
+            </p>
             <div class="tags">
               <span class="tag">React</span>
+              <span class="tag">TypeScript</span>
               <span class="tag">Redux</span>
               <span class="tag">Ag-Grid</span>
             </div>
           </div>
         </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2>Experience</h2>
+      <div class="experience">
+        <h3>Frontend Engineer — Onstak Technologies (Client: NetApp)</h3>
+        <p class="muted">Sep 2024 – Oct 2025</p>
+        <ul>
+          <li>Built and maintained React + TypeScript UI modules used by internal NetApp teams.</li>
+          <li>Migrated legacy UI components to modern React patterns.</li>
+          <li>Implemented shared state and data-heavy tables in enterprise workflows.</li>
+        </ul>
       </div>
     </section>
 
@@ -312,10 +351,10 @@
     <section id="skills">
       <h2>Skills & Stack</h2>
       <div class="skills">
-        <div class="skill"><h3>Frontend</h3><p>React, TypeScript, JavaScript</p></div>
+        <div class="skill"><h3>Core</h3><p>JavaScript, TypeScript, React</p></div>
         <div class="skill"><h3>State</h3><p>Redux, Context API</p></div>
-        <div class="skill"><h3>UI</h3><p>Material UI, Responsive Design</p></div>
-        <div class="skill"><h3>Data</h3><p>REST APIs, Ag-Grid</p></div>
+        <div class="skill"><h3>UI</h3><p>Material UI, Responsive Design, Ag-Grid</p></div>
+        <div class="skill"><h3>Tooling</h3><p>Git, GitHub, Jest, React Testing Library</p></div>
       </div>
     </section>
 
@@ -324,11 +363,12 @@
       <h2>Testimonials</h2>
       <div class="testimonials">
         <div class="testimonial">
-          “Sravanth consistently delivered clean, maintainable UI code and adapted quickly to complex legacy systems.”
+          “Sravanth ramped up quickly on a complex codebase and consistently delivered
+          clean, maintainable UI components.”
           <br><br><strong>— Senior Engineer, NetApp</strong>
         </div>
         <div class="testimonial">
-          “Strong frontend fundamentals and a thoughtful approach to problem-solving.”
+          “Thoughtful frontend engineer with strong fundamentals and attention to detail.”
           <br><br><strong>— Team Lead, Onstak Technologies</strong>
         </div>
       </div>
@@ -337,11 +377,11 @@
     <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
-      <p style="max-width:720px;color:var(--muted)">
-        I enjoy working on frontend systems that need to scale over time —
-        especially codebases where clarity and structure matter more than quick hacks.
-        Outside of work, I build tools to remove friction and deepen my understanding
-        of frontend architecture.
+      <p style="max-width:800px;color:var(--muted)">
+        I build frontend systems that need to stay readable and maintainable as they grow.
+        In my recent work, that meant migrating legacy UI, managing shared state,
+        and working with large datasets in enterprise applications.
+        Outside of work, I build small tools to remove repetitive friction I’ve personally experienced.
       </p>
     </section>
 
