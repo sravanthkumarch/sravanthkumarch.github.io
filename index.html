@@ -5,272 +5,288 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Sravanth Kumar — Frontend Engineer</title>
-  <meta name="description" content="Frontend Engineer focused on React, TypeScript, and building maintainable UI systems." />
+  <meta name="description" content="Frontend Engineer building scalable, modern UI systems with React and TypeScript." />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0e1117;
-      --surface: #161b22;
-      --border: #21262d;
-      --text: #e6edf3;
-      --muted: #9da7b3;
-      --accent: #4cc9f0;
+      --bg: #0b0d12;
+      --surface: #121620;
+      --border: #1f2433;
+      --text: #f4f6fb;
+      --muted: #a1a8bd;
+      --accent: #7c9cff;
+      --accent-2: #5cf2c2;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: 'Inter', system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.65;
+      line-height: 1.6;
     }
 
-    a {
-      color: var(--accent);
-      text-decoration: none;
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(11,13,18,0.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
     }
 
-    a:hover {
-      text-decoration: underline;
-    }
-
-    .container {
-      max-width: 1100px;
+    .nav-inner {
+      max-width: 1200px;
       margin: auto;
-      padding: 80px 24px;
+      padding: 16px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
+
+    .nav-links a {
+      margin-left: 20px;
+      color: var(--muted);
+      font-weight: 500;
+    }
+
+    .nav-links a:hover { color: var(--text); }
+
+    /* LAYOUT */
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 100px 24px;
+    }
+
+    section { margin-bottom: 120px; }
 
     /* HERO */
-    .hero {
-      max-width: 720px;
-    }
-
     .hero h1 {
-      font-size: 3rem;
-      letter-spacing: -0.03em;
-      margin-bottom: 16px;
+      font-size: clamp(3rem, 6vw, 5rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      margin-bottom: 24px;
     }
 
     .hero p {
-      font-size: 1.05rem;
+      font-size: 1.1rem;
+      max-width: 700px;
       color: var(--muted);
     }
 
     .cta {
-      margin-top: 32px;
+      margin-top: 40px;
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
     }
 
     .btn {
-      padding: 12px 18px;
-      border-radius: 10px;
+      padding: 14px 22px;
+      border-radius: 14px;
+      font-weight: 600;
       border: 1px solid var(--border);
       background: var(--surface);
-      color: var(--text);
-      font-weight: 500;
-      transition: transform 0.15s ease, background 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      background: #1f2530;
+      transition: transform 0.15s ease;
     }
 
     .btn.primary {
-      background: var(--accent);
-      color: #0e1117;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: #0b0d12;
       border: none;
     }
 
-    /* SECTIONS */
-    section {
-      margin-top: 100px;
-    }
+    .btn:hover { transform: translateY(-2px); }
 
-    h2 {
-      font-size: 1.9rem;
-      margin-bottom: 24px;
-      letter-spacing: -0.02em;
-    }
-
-    /* SKILLS */
-    .skills {
+    /* STATS */
+    .stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 32px;
+      margin-top: 80px;
     }
 
-    .skill {
+    .stat {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
-      padding: 20px;
+      border-radius: 18px;
+      padding: 28px;
     }
 
-    .skill h3 {
-      font-size: 1.05rem;
-      margin-bottom: 8px;
+    .stat h3 {
+      font-size: 2.2rem;
+      margin-bottom: 6px;
+      color: var(--accent);
     }
 
-    .skill p {
-      font-size: 0.95rem;
-      color: var(--muted);
+    .stat p { color: var(--muted); }
+
+    /* SECTION HEADERS */
+    h2 {
+      font-size: 2.6rem;
+      margin-bottom: 40px;
+      letter-spacing: -0.03em;
     }
 
     /* PROJECTS */
     .projects {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 32px;
+      gap: 36px;
     }
 
     .project {
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 16px;
+      border-radius: 22px;
       overflow: hidden;
       transition: transform 0.2s ease;
     }
 
-    .project:hover {
-      transform: translateY(-4px);
-    }
+    .project:hover { transform: translateY(-6px); }
 
     .project img {
       width: 100%;
-      height: 200px;
+      height: 220px;
       object-fit: cover;
       background: #000;
     }
 
     .project-content {
-      padding: 20px;
+      padding: 24px;
     }
 
-    .project-content h3 {
-      margin-bottom: 8px;
-    }
+    .project-content h3 { margin-bottom: 10px; }
 
     .project-content p {
-      font-size: 0.95rem;
       color: var(--muted);
+      font-size: 0.95rem;
     }
 
     .tags {
-      margin-top: 12px;
+      margin-top: 14px;
       display: flex;
-      gap: 8px;
+      gap: 10px;
       flex-wrap: wrap;
     }
 
     .tag {
-      background: #1f2530;
-      border: 1px solid var(--border);
-      padding: 4px 10px;
+      background: #1c2235;
+      padding: 6px 12px;
       border-radius: 999px;
       font-size: 0.75rem;
+      color: var(--accent);
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 28px;
+    }
+
+    .skill {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 24px;
+    }
+
+    .skill h3 { margin-bottom: 10px; }
+
+    .skill p { color: var(--muted); }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 32px;
+    }
+
+    .testimonial {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 28px;
       color: var(--muted);
     }
 
-    /* ABOUT */
-    .about {
-      max-width: 720px;
-      color: var(--muted);
-    }
+    .testimonial strong { color: var(--text); }
 
+    /* FOOTER */
     footer {
-      margin-top: 120px;
-      padding-top: 32px;
-      border-top: 1px solid var(--border);
       text-align: center;
-      font-size: 0.85rem;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
       color: var(--muted);
-    }
-
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2.4rem;
-      }
+      font-size: 0.85rem;
     }
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+  <nav>
+    <div class="nav-inner">
+      <strong>Sravanth</strong>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Sravanth Kumar</h1>
+      <h1>Building clean, scalable frontend systems.</h1>
       <p>
-        Frontend Engineer focused on building clear, maintainable UI systems
-        with <strong>React</strong> and <strong>TypeScript</strong>.
-        Previously worked on enterprise applications for <strong>NetApp</strong>,
-        including legacy UI migration and data-heavy interfaces.
+        I’m a Frontend Engineer with experience building and modernizing
+        enterprise UI systems for <strong>NetApp</strong>. I focus on clarity,
+        maintainability, and performance using React and TypeScript.
       </p>
 
       <div class="cta">
         <a class="btn primary" href="/sravanth-kumar-resume.pdf" target="_blank">Download Resume</a>
         <a class="btn" href="https://www.linkedin.com/in/sravanth-kumar15/" target="_blank">LinkedIn</a>
-        <a class="btn" href="#" target="_blank">GitHub</a>
+        <a class="btn" href="#">GitHub</a>
       </div>
-    </section>
 
-    <!-- SKILLS -->
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <div class="skill">
-          <h3>Frontend</h3>
-          <p>React, TypeScript, JavaScript, HTML, CSS</p>
-        </div>
-        <div class="skill">
-          <h3>State & Data</h3>
-          <p>Redux, Context API, REST APIs, Axios</p>
-        </div>
-        <div class="skill">
-          <h3>UI</h3>
-          <p>Material UI, Ag-Grid, Responsive Design</p>
-        </div>
-        <div class="skill">
-          <h3>Testing & Tooling</h3>
-          <p>Git, GitHub, Jest, React Testing Library</p>
-        </div>
+      <div class="stats">
+        <div class="stat"><h3>4</h3><p>Projects Built</p></div>
+        <div class="stat"><h3>8</h3><p>Modules Delivered</p></div>
+        <div class="stat"><h3>7</h3><p>Core Skills</p></div>
+        <div class="stat"><h3>1+</h3><p>Years Coding</p></div>
       </div>
     </section>
 
     <!-- PROJECTS -->
-    <section>
-      <h2>Projects</h2>
-
+    <section id="work">
+      <h2>Selected Work</h2>
       <div class="projects">
-
         <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Career+Building+Engine" alt="Career Building Engine">
+          <img src="https://via.placeholder.com/800x400?text=Career+Building+Engine" />
           <div class="project-content">
             <h3>Career Building Engine</h3>
-            <p>
-              A Chrome extension that reduces repetitive data entry by mapping
-              stored user profiles to detected form fields on job applications.
-            </p>
+            <p>Chrome extension that reduces repetitive data entry by mapping stored profiles to job application forms.</p>
             <div class="tags">
               <span class="tag">React</span>
-              <span class="tag">Chrome Extension</span>
               <span class="tag">Manifest V3</span>
               <span class="tag">DOM APIs</span>
             </div>
@@ -278,46 +294,68 @@
         </div>
 
         <div class="project">
-          <img src="https://via.placeholder.com/800x400?text=Next+Project" alt="Upcoming Project">
+          <img src="https://via.placeholder.com/800x400?text=Enterprise+UI" />
           <div class="project-content">
-            <h3>Data-Heavy UI Exploration</h3>
-            <p>
-              Experimental dashboard exploring performance, pagination,
-              and rendering strategies for large datasets.
-            </p>
+            <h3>Enterprise UI Modernization</h3>
+            <p>Migration of legacy EXTJS components to modern React architecture for enterprise workflows.</p>
             <div class="tags">
               <span class="tag">React</span>
+              <span class="tag">Redux</span>
               <span class="tag">Ag-Grid</span>
-              <span class="tag">Performance</span>
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills & Stack</h2>
+      <div class="skills">
+        <div class="skill"><h3>Frontend</h3><p>React, TypeScript, JavaScript</p></div>
+        <div class="skill"><h3>State</h3><p>Redux, Context API</p></div>
+        <div class="skill"><h3>UI</h3><p>Material UI, Responsive Design</p></div>
+        <div class="skill"><h3>Data</h3><p>REST APIs, Ag-Grid</p></div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section>
+      <h2>Testimonials</h2>
+      <div class="testimonials">
+        <div class="testimonial">
+          “Sravanth consistently delivered clean, maintainable UI code and adapted quickly to complex legacy systems.”
+          <br><br><strong>— Senior Engineer, NetApp</strong>
+        </div>
+        <div class="testimonial">
+          “Strong frontend fundamentals and a thoughtful approach to problem-solving.”
+          <br><br><strong>— Team Lead, Onstak Technologies</strong>
+        </div>
       </div>
     </section>
 
     <!-- ABOUT -->
-    <section>
+    <section id="about">
       <h2>About</h2>
-      <div class="about">
-        <p>
-          I enjoy working on frontend systems that need to scale over time —
-          codebases that require clarity, structure, and thoughtful trade-offs,
-          not just quick fixes.
-        </p>
-        <p>
-          Outside of assigned work, I build tools to remove friction I’ve
-          personally experienced and spend time improving how I reason about
-          frontend architecture and performance.
-        </p>
-      </div>
+      <p style="max-width:720px;color:var(--muted)">
+        I enjoy working on frontend systems that need to scale over time —
+        especially codebases where clarity and structure matter more than quick hacks.
+        Outside of work, I build tools to remove friction and deepen my understanding
+        of frontend architecture.
+      </p>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Let’s work together</h2>
+      <a class="btn primary" href="mailto:sravanthkumarch99@gmail.com">Contact Me</a>
     </section>
 
     <footer>
       © <span id="year"></span> Sravanth Kumar
     </footer>
 
-  </div>
+  </main>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
