@@ -3,38 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sravanth Kumar</title>
 
-  <!-- Font close to Bluren -->
+  <title>Sravanth Kumar — Frontend Engineer</title>
+  <meta name="description" content="Frontend Engineer building scalable UI systems with React and TypeScript." />
+
+  <!-- Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #0a0a0a;
-      --card: #121212;
-      --border: rgba(255,255,255,0.08);
-      --text: #f5f5f5;
-      --muted: #9a9a9a;
-      --accent: #ffffff;
+      --bg: #ffffff;
+      --card: #f6f7f9;
+      --border: #e4e6eb;
+      --text: #0f172a;
+      --muted: #475569;
+      --accent: #2563eb;
     }
 
     * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, system-ui, sans-serif;
       background: var(--bg);
       color: var(--text);
-      -webkit-font-smoothing: antialiased;
     }
 
-    /* ===== FLOATING CENTER NAV (BLUREN STYLE) ===== */
+    a { text-decoration: none; color: inherit; }
+
+    /* ===== CENTER FLOATING NAV ===== */
     .nav-wrapper {
       position: fixed;
       top: 24px;
@@ -45,24 +45,24 @@
 
     nav {
       display: flex;
-      gap: 20px;
-      padding: 12px 20px;
+      gap: 18px;
+      padding: 12px 18px;
       border-radius: 999px;
-      background: rgba(18,18,18,0.75);
-      backdrop-filter: blur(12px);
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(10px);
       border: 1px solid var(--border);
     }
 
     nav a {
       font-size: 0.85rem;
       color: var(--muted);
-      text-decoration: none;
       font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
     }
 
-    nav a:hover {
-      color: var(--text);
-    }
+    nav a:hover { color: var(--text); }
 
     /* ===== LAYOUT ===== */
     .container {
@@ -71,22 +71,29 @@
       padding: 160px 24px 120px;
     }
 
-    section {
-      margin-bottom: 160px;
-    }
+    section { margin-bottom: 160px; }
 
     /* ===== HERO ===== */
     .hero h1 {
-      font-size: clamp(3.5rem, 7vw, 6rem);
+      font-size: clamp(3.2rem, 6vw, 5.2rem);
       font-weight: 800;
       letter-spacing: -0.04em;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero p {
       max-width: 620px;
       font-size: 1.05rem;
       color: var(--muted);
+    }
+
+    /* ===== DYNAMIC TEXT ===== */
+    .dynamic {
+      color: var(--accent);
+      border-right: 3px solid var(--accent);
+      padding-right: 6px;
+      white-space: nowrap;
+      overflow: hidden;
     }
 
     /* ===== STATS ===== */
@@ -98,31 +105,29 @@
     }
 
     .stat {
-      padding: 32px;
-      border-radius: 20px;
+      padding: 28px;
+      border-radius: 18px;
       background: var(--card);
       border: 1px solid var(--border);
     }
 
     .stat h3 {
-      font-size: 2.4rem;
+      font-size: 2.2rem;
       margin: 0 0 6px;
+      color: var(--accent);
     }
 
-    .stat span {
-      color: var(--muted);
-      font-size: 0.9rem;
-    }
+    .stat span { color: var(--muted); }
 
     /* ===== SECTION HEADERS ===== */
     h2 {
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
       letter-spacing: -0.03em;
       margin-bottom: 60px;
     }
 
-    /* ===== PROJECT GRID ===== */
+    /* ===== PROJECTS ===== */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
@@ -130,30 +135,24 @@
     }
 
     .card {
-      border-radius: 24px;
+      border-radius: 22px;
       overflow: hidden;
       background: var(--card);
       border: 1px solid var(--border);
       transition: transform .25s ease;
     }
 
-    .card:hover {
-      transform: translateY(-6px);
-    }
+    .card:hover { transform: translateY(-6px); }
 
     .card img {
       width: 100%;
       height: 220px;
       object-fit: cover;
-      background: #000;
+      background: #ddd;
     }
 
     .card-content {
       padding: 24px;
-    }
-
-    .card-content h3 {
-      margin: 0 0 10px;
     }
 
     .card-content p {
@@ -161,11 +160,26 @@
       font-size: 0.95rem;
     }
 
-    /* ===== TESTIMONIAL ===== */
-    .testimonial {
-      max-width: 700px;
-      font-size: 1.2rem;
-      line-height: 1.7;
+    /* ===== TECH STACK ===== */
+    .stack {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 28px;
+      align-items: center;
+    }
+
+    .stack-item {
+      text-align: center;
+    }
+
+    .stack-item img {
+      width: 48px;
+      height: 48px;
+      margin-bottom: 10px;
+    }
+
+    .stack-item span {
+      font-size: 0.85rem;
       color: var(--muted);
     }
 
@@ -176,29 +190,25 @@
 
     .cta a {
       display: inline-block;
-      padding: 16px 28px;
+      padding: 16px 30px;
       border-radius: 999px;
       border: 1px solid var(--border);
-      color: var(--text);
-      text-decoration: none;
       font-weight: 600;
     }
 
-    .cta a:hover {
-      background: var(--card);
-    }
+    .cta a:hover { background: var(--card); }
   </style>
 </head>
 
 <body>
 
-  <!-- CENTER FLOATING NAV -->
+  <!-- CENTER NAV -->
   <div class="nav-wrapper">
     <nav>
-      <a href="#work">Work</a>
-      <a href="#skills">Skills</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
+      <a href="#work">🧩 Work</a>
+      <a href="#stack">🛠 Stack</a>
+      <a href="#about">👤 About</a>
+      <a href="#contact">✉️ Contact</a>
     </nav>
   </div>
 
@@ -206,16 +216,20 @@
 
     <!-- HERO -->
     <section class="hero">
-      <h1>Frontend Engineer<br/>building scalable UI.</h1>
+      <h1>
+        Frontend Engineer<br/>
+        building <span class="dynamic" id="dynamicText"></span>
+      </h1>
+
       <p>
-        I build React and TypeScript interfaces for enterprise applications,
+        I build React and TypeScript UI systems for enterprise applications,
         focusing on clarity, maintainability, and data-heavy workflows.
       </p>
 
       <div class="stats">
         <div class="stat"><h3>4</h3><span>Projects</span></div>
         <div class="stat"><h3>8</h3><span>Modules</span></div>
-        <div class="stat"><h3>7</h3><span>Core Skills</span></div>
+        <div class="stat"><h3>7</h3><span>Skills</span></div>
         <div class="stat"><h3>1+</h3><span>Years Coding</span></div>
       </div>
     </section>
@@ -228,7 +242,7 @@
           <img src="https://via.placeholder.com/800x400" />
           <div class="card-content">
             <h3>Job Application Autofill</h3>
-            <p>Chrome extension that reduces repetitive form entry.</p>
+            <p>Chrome extension that reduces repetitive job application form entry.</p>
           </div>
         </div>
 
@@ -236,8 +250,35 @@
           <img src="https://via.placeholder.com/800x400" />
           <div class="card-content">
             <h3>Enterprise UI Modules</h3>
-            <p>React modules built for NetApp internal systems.</p>
+            <p>React modules built for NetApp internal tools.</p>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section id="stack">
+      <h2>What I Use</h2>
+      <div class="stack">
+        <div class="stack-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg">
+          <span>JavaScript</span>
+        </div>
+        <div class="stack-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg">
+          <span>TypeScript</span>
+        </div>
+        <div class="stack-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+          <span>React</span>
+        </div>
+        <div class="stack-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg">
+          <span>Redux</span>
+        </div>
+        <div class="stack-item">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg">
+          <span>Git</span>
         </div>
       </div>
     </section>
@@ -245,7 +286,7 @@
     <!-- ABOUT -->
     <section id="about">
       <h2>About</h2>
-      <p class="testimonial">
+      <p style="max-width:700px;color:var(--muted)">
         I build frontend systems that stay readable as they scale. My recent work
         involved migrating legacy UI, managing shared state, and working with
         large datasets in enterprise environments.
@@ -259,6 +300,45 @@
     </section>
 
   </main>
+
+  <!-- DYNAMIC TEXT SCRIPT -->
+  <script>
+    const words = [
+      "scalable interfaces",
+      "clean UI systems",
+      "maintainable frontend",
+      "data-heavy dashboards"
+    ];
+
+    let i = 0;
+    let j = 0;
+    let currentWord = "";
+    let isDeleting = false;
+    const el = document.getElementById("dynamicText");
+
+    function type() {
+      if (i === words.length) i = 0;
+      currentWord = words[i];
+
+      if (!isDeleting) {
+        el.textContent = currentWord.slice(0, ++j);
+        if (j === currentWord.length) {
+          isDeleting = true;
+          setTimeout(type, 1200);
+          return;
+        }
+      } else {
+        el.textContent = currentWord.slice(0, --j);
+        if (j === 0) {
+          isDeleting = false;
+          i++;
+        }
+      }
+      setTimeout(type, isDeleting ? 50 : 90);
+    }
+
+    type();
+  </script>
 
 </body>
 </html>
